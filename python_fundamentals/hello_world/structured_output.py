@@ -1,3 +1,10 @@
 #!/usr/bin/env python3
 
-print("Language: Python\nVersion: 3\nPi approx: 3.14\nComputation valid: True")
+pi = 3.14
+is_valid = (pi == 3.14)
+
+
+print("Language: Python\nVersion: 3\n")
+print(f"Pi approx:{pi:.2f}")
+print(f"Computation valid :{is_valid}")
+
