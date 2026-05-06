@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
+for code in range(97, 123):
+    lettre = chr(code)
 
-for i in range(97, 123):
-    if i == 101 or i == 113:
+    if lettre == 'q' or lettre == 'e':
         continue
-    print(chr(i), end="")
+    
+    print("{}".format(lettre), end="")
+
 print()
