@@ -6,7 +6,6 @@ for a in range(0, 10):
             continue
         print("{}{}".format(a, b), end="")
         if a != 8:
-            print(', ',end="")
+            print(', ', end="")
         else:
             print()
-        
