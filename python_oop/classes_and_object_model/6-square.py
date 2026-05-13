@@ -89,7 +89,7 @@ class Square:
         Définit la représentation sous forme de chaîne de caractères du carré.
 
         Returns:
-            str: Le carré représenté avec des # et tenant compte de la position.
+        str: Le carré représenté avec des # et tenant compte de la position.
         """
         if self.__size == 0:
             return ""
