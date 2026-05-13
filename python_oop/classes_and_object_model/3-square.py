@@ -1,20 +1,24 @@
 #!/usr/bin/env python3
 """
-Ce module définit la classe Square.
+Module 3-square
+Définit une classe Square avec une méthode de calcul d'aire.
 """
 
 
 class Square:
     """
-    Représente un carré.
+    Classe Square qui définit un carré par sa taille.
+
+    Attributes:
+        __size (int): La taille d'un côté du carré (privée).
     """
 
-    def __init__(self, size):
+    def __init__(self, size=0):
         """
         Initialise une nouvelle instance de Square.
 
         Args:
-            size (int): La taille du côté du carré.
+            size (int): La taille du côté du nouveau carré.
 
         Raises:
             TypeError: Si size n'est pas un entier.
@@ -28,7 +32,7 @@ class Square:
 
     def area(self):
         """
-        Calcule l'aire du carré.
+        Calcule l'aire du carré actuel.
 
         Returns:
             int: L'aire du carré (taille * taille).
