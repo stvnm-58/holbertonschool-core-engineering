@@ -1,47 +1,23 @@
 #!/usr/bin/env python3
-"""
-Ce module définit la classe Square.
-"""
+"""Module for Square class."""
 
 
 class Square:
-    """
-    Représente un carré.
-    """
+    """Defines a square."""
 
     def __init__(self, size=0, position=(0, 0)):
-        """
-        Initialise une nouvelle instance de Square.
-
-        Args:
-            size (int): La taille du côté du carré.
-            position (tuple): La position (x, y) du carré.
-        """
+        """Initialize square."""
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """
-        Récupère la taille du carré.
-
-        Returns:
-            int: La taille du carré.
-        """
+        """Get size."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """
-        Définit la taille du carré.
-
-        Args:
-            value (int): La nouvelle taille.
-
-        Raises:
-            TypeError: Si value n'est pas un entier.
-            ValueError: Si value est inférieur à 0.
-        """
+        """Set size."""
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         if value < 0:
@@ -50,25 +26,12 @@ class Square:
 
     @property
     def position(self):
-        """
-        Récupère la position du carré.
-
-        Returns:
-            tuple: La position (x, y) du carré.
-        """
+        """Get position."""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """
-        Définit la position du carré.
-
-        Args:
-            value (tuple): La nouvelle position.
-
-        Raises:
-            TypeError: Si value n'est pas un tuple de 2 entiers positifs.
-        """
+        """Set position with strict validation."""
         if (not isinstance(value, tuple) or len(value) != 2 or
                 not all(isinstance(num, int) for num in value) or
                 not all(num >= 0 for num in value)):
@@ -76,39 +39,31 @@ class Square:
         self.__position = value
 
     def area(self):
-        """
-        Calcule l'aire du carré.
-
-        Returns:
-            int: L'aire du carré.
-        """
+        """Return area."""
         return self.__size ** 2
 
-    def __str__(self):
-        """
-        Définit la représentation sous forme de chaîne de caractères du carré.
+    def my_print(self):
+        """Print square using # and spaces."""
+        if self.__size == 0:
+            print("")
+            return
 
-        Returns:
-        str: Le carré représenté avec des # et tenant compte de la position.
-        """
+        for _ in range(self.__position[1]):
+            print("")
+        for _ in range(self.__size):
+            print(" " * self.__position[0] + "#" * self.__size)
+
+    def __str__(self):
+        """String representation of square for print()."""
         if self.__size == 0:
             return ""
 
         res = []
+        # Lignes vides pour Y
         for _ in range(self.__position[1]):
             res.append("")
-
+        # Lignes du carré pour X
         for _ in range(self.__size):
             res.append(" " * self.__position[0] + "#" * self.__size)
 
         return "\n".join(res)
-
-    def my_print(self):
-        """
-        Affiche le carré dans la console.
-        Si la taille est 0, affiche une ligne vide.
-        """
-        if self.__size == 0:
-            print("")
-        else:
-            print(self)
