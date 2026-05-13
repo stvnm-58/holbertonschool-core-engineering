@@ -1,12 +1,16 @@
 #!/usr/bin/env python3
 """
-Ce module définit la classe Square.
+Module 1-square
+Définit une classe Square avec un attribut privé.
 """
 
 
 class Square:
     """
-    Représente un carré.
+    Classe Square qui définit un carré par sa taille.
+
+    Attributes:
+        __size (int): La taille d'un côté du carré (privée).
     """
 
     def __init__(self, size):
@@ -14,6 +18,6 @@ class Square:
         Initialise une nouvelle instance de Square.
 
         Args:
-            size: La taille du côté du carré.
+            size (int): La taille du côté du nouveau carré.
         """
         self.__size = size
