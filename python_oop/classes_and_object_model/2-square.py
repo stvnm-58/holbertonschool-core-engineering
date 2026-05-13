@@ -1,24 +1,25 @@
 #!/usr/bin/env python3
 """
-Ce module définit la classe Square.
+Module 2-square
+Defines a class Square with size validation.
 """
 
 
 class Square:
     """
-    Représente un carré.
+    Class Square that defines a square.
     """
 
-    def __init__(self, size):
+    def __init__(self, size=0):
         """
-        Initialise une nouvelle instance de Square.
+        Initializes a new Square instance.
 
         Args:
-            size (int): La taille du côté du carré.
+            size (int): The size of the square.
 
         Raises:
-            TypeError: Si size n'est pas un entier.
-            ValueError: Si size est inférieur à 0.
+            TypeError: if size is not an integer.
+            ValueError: if size is less than 0.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
