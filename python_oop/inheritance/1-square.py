@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Module définissant la classe Square."""
-from models.base_geometry import BaseGeometry
+BaseGeometry = __import__('base_geometry').BaseGeometry
 
 
 class Square(BaseGeometry):
