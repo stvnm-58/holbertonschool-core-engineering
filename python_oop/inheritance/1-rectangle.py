@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Module définissant la classe Rectangle, héritant de BaseGeometry."""
-
+BaseGeometry = __import__('base_geometry').BaseGeometry
 
 class Rectangle(BaseGeometry):
     """Représente un rectangle utilisant BaseGeometry."""
