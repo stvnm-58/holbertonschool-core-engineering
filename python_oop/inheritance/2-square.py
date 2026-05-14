@@ -28,7 +28,7 @@ class Square(Rectangle):
 
     def __str__(self):
         """Définit la représentation sous forme de chaîne de caractères.
-        
+
         Returns:
             str: La description du carré au format [Square] <width>/<height>
         """
