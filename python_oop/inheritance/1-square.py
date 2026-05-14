@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Module définissant la classe Square."""
-BaseGeometry = __import__('base_geometry').BaseGeometry
+Rectangle = __import__('Rectangle').Rectangle
 
 
-class Square(BaseGeometry):
+class Square(rectangle):
     """Représente un carré qui hérite de BaseGeometry."""
 
     def __init__(self, size):
