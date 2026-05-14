@@ -3,7 +3,7 @@
 Rectangle = __import__('1-Rectangle').Rectangle
 
 
-class Square(rectangle):
+class Square(Rectangle):
     """Représente un carré qui hérite de BaseGeometry."""
 
     def __init__(self, size):
