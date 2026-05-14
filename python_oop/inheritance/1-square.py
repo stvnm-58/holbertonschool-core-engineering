@@ -13,8 +13,9 @@ class Square(BaseGeometry):
         Args:
             size (int): La taille du côté du carré.
         """
-        self.integer_validator("size", size)
         self.__size = size
+        self.integer_validator("size", size)
+        super().__init__(size, size)
 
     def area(self):
         """
