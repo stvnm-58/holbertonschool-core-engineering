@@ -4,21 +4,24 @@ import math
 
 
 class Shape(ABC):
-    """Classe de base abstraite représentant une forme géométrique."""
+    """
+    Classe de base abstraite (ABC) servant de blueprint.
+    Elle force les sous-classes à implémenter area et perimeter.
+    """
 
     @abstractmethod
     def area(self):
-        """Calcule l'aire de la forme."""
+        """Méthode abstraite pour l'aire."""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """Calcule le périmètre de la forme."""
+        """Méthode abstraite pour le périmètre."""
         pass
 
 
 class Circle(Shape):
-    """Représentation d'un cercle."""
+    """Implémentation concrète pour un cercle."""
 
     def __init__(self, radius):
         self.radius = radius
@@ -31,7 +34,7 @@ class Circle(Shape):
 
 
 class Rectangle(Shape):
-    """Représentation d'un rectangle."""
+    """Implémentation concrète pour un rectangle."""
 
     def __init__(self, width, height):
         self.width = width
@@ -41,13 +44,14 @@ class Rectangle(Shape):
         return self.width * self.height
 
     def perimeter(self):
-        return (self.width + self.height) * 2
+        return 2 * (self.width + self.height)
 
 
 def shape_info(obj):
     """
-    Affiche les informations d'une forme en utilisant le Duck Typing.
-    Peu importe la classe de l'objet, tant qu'il a les méthodes requises.
+    Fonction standalone utilisant le Duck Typing.
+    Elle ne vérifie pas le type (pas de isinstance), elle appelle
+    juste les méthodes dont elle a besoin.
     """
-    print(f"Area : {obj.area()}")
-    print(f"Perimeter : {obj.perimeter()}")
+    print(f"Area: {obj.area()}")
+    print(f"Perimeter: {obj.perimeter()}")
