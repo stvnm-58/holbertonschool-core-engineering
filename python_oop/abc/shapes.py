@@ -33,7 +33,6 @@ class Shape(ABC):
 
 class Circle(Shape):
     """Représente un cercle géométrique."""
-
     def __init__(self, radius):
         """Initialise le cercle avec son rayon.
 
@@ -61,7 +60,6 @@ class Circle(Shape):
 
 class Rectangle(Shape):
     """Représente un rectangle géométrique."""
-
     def __init__(self, width, height):
         """Initialise le rectangle avec ses dimensions.
 
