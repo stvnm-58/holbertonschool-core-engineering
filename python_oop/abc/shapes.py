@@ -4,8 +4,10 @@ Ce module illustre l'utilisation des classes de base abstraites (ABC)
 et du Duck Typing à travers une hiérarchie de formes géométriques.
 """
 
+
 from abc import ABC, abstractmethod
 import math
+
 
 
 class Shape(ABC):
