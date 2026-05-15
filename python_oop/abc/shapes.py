@@ -1,36 +1,26 @@
 #!/usr/bin/env python3
-"""
-Ce module illustre l'utilisation des classes de base abstraites (ABC) 
-et du Duck Typing à travers une hiérarchie de formes géométriques.
-"""
+"""Module de gestion de formes géométriques via ABC et Duck Typing."""
 
-
-from abc import ABC, abstractmethod
 import math
-
+from abc import ABC, abstractmethod
 
 
 class Shape(ABC):
-    """
-    Classe de base abstraite définissant l'interface pour toutes les formes.
-    Toute sous-classe doit obligatoirement implémenter area() et perimeter().
-    """
+    """Classe de base abstraite définissant l'interface des formes."""
 
     @abstractmethod
     def area(self):
-        """Calcule et retourne l'aire de la forme."""
+        """Calcule l'aire."""
         pass
 
     @abstractmethod
     def perimeter(self):
-        """Calcule et retourne le périmètre de la forme."""
+        """Calcule le périmètre."""
         pass
 
 
 class Circle(Shape):
-    """
-    Représente un cercle défini par son rayon.
-    """
+    """Représente un cercle."""
 
     def __init__(self, radius):
         self.radius = radius
@@ -43,9 +33,7 @@ class Circle(Shape):
 
 
 class Rectangle(Shape):
-    """
-    Représente un rectangle défini par sa largeur et sa hauteur.
-    """
+    """Représente un rectangle."""
 
     def __init__(self, width, height):
         self.width = width
@@ -59,9 +47,6 @@ class Rectangle(Shape):
 
 
 def shape_info(obj):
-    """
-    Affiche l'aire et le périmètre d'un objet en utilisant le Duck Typing.
-    L'objet doit posséder les méthodes area() et perimeter().
-    """
+    """Affiche les informations d'une forme."""
     print(f"Area: {obj.area()}")
     print(f"Perimeter: {obj.perimeter()}")
