@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
-"""
-Module de gestion de formes géométriques.
+"""Module de gestion de formes géométriques.
 
-Ce script utilise des classes de base abstraites (ABC) pour définir un contrat 
+Ce script utilise des classes de base abstraites (ABC) pour définir un contrat
 pour les formes et illustre le concept de Duck Typing.
 """
 
@@ -15,8 +14,7 @@ class Shape(ABC):
 
     @abstractmethod
     def area(self):
-        """
-        Calcule l'aire de la forme.
+        """Calcule l'aire de la forme.
 
         Returns:
             float: L'aire calculée.
@@ -25,8 +23,7 @@ class Shape(ABC):
 
     @abstractmethod
     def perimeter(self):
-        """
-        Calcule le périmètre de la forme.
+        """Calcule le périmètre de la forme.
 
         Returns:
             float: Le périmètre calculé.
@@ -38,8 +35,7 @@ class Circle(Shape):
     """Représente un cercle géométrique."""
 
     def __init__(self, radius):
-        """
-        Initialise le cercle.
+        """Initialise le cercle.
 
         Args:
             radius (float): Le rayon du cercle.
@@ -47,17 +43,15 @@ class Circle(Shape):
         self.radius = radius
 
     def area(self):
-        """
-        Calcule l'aire du cercle.
+        """Calcule l'aire du cercle.
 
         Returns:
             float: Aire calculée via pi * r^2.
         """
-        return math.pi * (self.radius ** 2)
+        return math.pi * (self.radius**2)
 
     def perimeter(self):
-        """
-        Calcule le périmètre du cercle.
+        """Calcule le périmètre du cercle.
 
         Returns:
             float: Périmètre calculé via 2 * pi * r.
@@ -69,8 +63,7 @@ class Rectangle(Shape):
     """Représente un rectangle géométrique."""
 
     def __init__(self, width, height):
-        """
-        Initialise le rectangle.
+        """Initialise le rectangle.
 
         Args:
             width (float): La largeur du rectangle.
@@ -80,8 +73,7 @@ class Rectangle(Shape):
         self.height = height
 
     def area(self):
-        """
-        Calcule l'aire du rectangle.
+        """Calcule l'aire du rectangle.
 
         Returns:
             float: Aire calculée via largeur * hauteur.
@@ -89,8 +81,7 @@ class Rectangle(Shape):
         return self.width * self.height
 
     def perimeter(self):
-        """
-        Calcule le périmètre du rectangle.
+        """Calcule le périmètre du rectangle.
 
         Returns:
             float: Périmètre calculé via 2 * (largeur + hauteur).
@@ -99,11 +90,10 @@ class Rectangle(Shape):
 
 
 def shape_info(obj):
-    """
-    Affiche les informations d'une forme via Duck Typing.
+    """Affiche les informations d'une forme via Duck Typing.
 
     Args:
-        obj (Shape): Un objet qui doit posséder les méthodes area() et perimeter().
+        obj (Shape): Un objet possédant les méthodes area() et perimeter().
     """
     print(f"Area: {obj.area()}")
     print(f"Perimeter: {obj.perimeter()}")
