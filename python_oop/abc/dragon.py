@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """
-Module illustrant l'usage des Mixins pour composer des comportements.
+Ce module définit des mixins pour la nage et le vol,
+et les utilise pour créer une classe Dragon.
 """
 
 
@@ -8,34 +9,33 @@ class SwimMixin:
     """Mixin fournissant la capacité de nager."""
 
     def swim(self):
-        """Affiche un message de nage."""
-        print("the creature swims!")
+        """Affiche le comportement de nage."""
+        print("The creature swims!")
 
 
 class FlyMixin:
     """Mixin fournissant la capacité de voler."""
 
     def fly(self):
-        """Affiche un message de vol."""
-        print("The creature Flies!")
+        """Affiche le comportement de vol."""
+        print("The creature flies!")
 
 
-class Dragon(FlyMixin, SwimMixin):
+class Dragon(SwimMixin, FlyMixin):
     """
-    Un dragon qui combine les capacités de vol et de nage via des Mixins.
+    Classe Dragon héritant des capacités de nage et de vol via des mixins.
     """
 
     def roar(self):
-        """Affiche le rugissement spécifique du dragon."""
+        """Affiche le rugissement du dragon."""
         print("The dragon roars!")
 
 
 if __name__ == "__main__":
-    # Création de l'instance
-    # Note l'indentation de 4 espaces ici
-    smaug = Dragon()
+    # Instanciation de l'objet Dragon
+    dragon = Dragon()
 
     # Démonstration des capacités
-    smaug.swim()
-    smaug.fly()
-    smaug.roar()
+    dragon.swim()
+    dragon.fly()
+    dragon.roar()
