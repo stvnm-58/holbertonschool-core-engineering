@@ -1,41 +1,47 @@
 #!/usr/bin/env python3
 """
-Ce module définit des mixins pour la nage et le vol,
-et les utilise pour créer une classe Dragon.
+Module defining mixins and a Dragon class using multiple inheritance.
 """
 
 
 class SwimMixin:
-    """Mixin fournissant la capacité de nager."""
+    """
+    Mixin that provides swimming capability.
+    """
 
     def swim(self):
-        """Affiche le comportement de nage."""
+        """
+        Print swimming behavior.
+        """
         print("The creature swims!")
 
 
 class FlyMixin:
-    """Mixin fournissant la capacité de voler."""
+    """
+    Mixin that provides flying capability.
+    """
 
     def fly(self):
-        """Affiche le comportement de vol."""
+        """
+        Print flying behavior.
+        """
         print("The creature flies!")
 
 
 class Dragon(SwimMixin, FlyMixin):
     """
-    Classe Dragon héritant des capacités de nage et de vol via des mixins.
+    Dragon class that can swim, fly, and roar.
     """
 
     def roar(self):
-        """Affiche le rugissement du dragon."""
+        """
+        Print roaring behavior.
+        """
         print("The dragon roars!")
 
 
 if __name__ == "__main__":
-    # Instanciation de l'objet Dragon
     dragon = Dragon()
-
-    # Démonstration des capacités
     dragon.swim()
     dragon.fly()
     dragon.roar()
