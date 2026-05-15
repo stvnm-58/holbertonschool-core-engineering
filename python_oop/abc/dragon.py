@@ -7,7 +7,6 @@ et les utilise pour créer une classe Dragon.
 
 class SwimMixin:
     """Mixin fournissant la capacité de nager."""
-
     def swim(self):
         """Affiche le comportement de nage."""
         print("The creature swims!")
@@ -15,7 +14,6 @@ class SwimMixin:
 
 class FlyMixin:
     """Mixin fournissant la capacité de voler."""
-
     def fly(self):
         """Affiche le comportement de vol."""
         print("The creature flies!")
@@ -25,17 +23,6 @@ class Dragon(SwimMixin, FlyMixin):
     """
     Classe Dragon héritant des capacités de nage et de vol via des mixins.
     """
-
     def roar(self):
         """Affiche le rugissement du dragon."""
         print("The dragon roars!")
-
-
-if __name__ == "__main__":
-    # Instanciation de l'objet Dragon
-    dragon = Dragon()
-
-    # Démonstration des capacités
-    dragon.swim()
-    dragon.fly()
-    dragon.roar()
