@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Module démontrant l'héritage multiple et l'ordre de résolution des méthodes (MRO).
+Module démontrant l'héritage multiple et l'ordre de résolution des méthodes.
 
-Ce script définit une hiérarchie où une classe enfant (FlyingFish) combine 
+Ce script définit une hiérarchie où une classe enfant (FlyingFish) combine
 les comportements de deux classes parentes (Fish et Bird).
 """
 
@@ -34,7 +34,7 @@ class Bird:
 class FlyingFish(Fish, Bird):
     """
     Représente un poisson volant héritant de Fish et Bird.
-    
+
     L'ordre des parents (Fish, Bird) détermine la priorité dans le MRO.
     """
 
