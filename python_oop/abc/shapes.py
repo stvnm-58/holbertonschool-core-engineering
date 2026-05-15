@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """Module de gestion de formes géométriques via ABC et Duck Typing."""
-
 import math
 from abc import ABC, abstractmethod
 
