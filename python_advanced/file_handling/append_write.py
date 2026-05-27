@@ -3,7 +3,7 @@
 """
 
 
-def append_write(filename="", text=""):*
+def append_write(filename="", text=""):
     """Ajoute une chaîne à la fin d'un fichier (UTF-8).
     Renvoie le nombre de caractères ajoutés.
     """
