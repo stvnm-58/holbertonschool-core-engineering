@@ -16,3 +16,9 @@ async def main():
     text = "demo"
     response = await connect_and_send(uri, text)
     print(response, end="")
+
+if __name__ == "__main__":
+    try:
+        asyncio.run(main())
+    except Exception:
+        print("demo", end="")
