@@ -8,6 +8,7 @@ async def connect_and_send(uri: str, text: str) -> str:
     async with websockets.connect(uri) as websocket:
         await websocket.send(text)
         response = await websocket.recv()
+        return response
 
 
 async def main():
