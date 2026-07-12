@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import asyncio
-from websockets import connect
+import websockets
 
 
 async def connect_and_send(uri: str, text: str) -> str:
