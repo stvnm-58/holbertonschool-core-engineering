@@ -1,9 +1,9 @@
+#!/usr/bin/env python3
 from starlette.applications import Starlette
 from starlette.responses import HTMLResponse
 from starlette.routing import Route, WebSocketRoute
 from starlette.websockets import WebSocketDisconnect
 
-# Simple HTML page to serve at http://localhost:8000
 HTML_CONTENT = """
 <!DOCTYPE html>
 <html>
@@ -17,15 +17,17 @@ HTML_CONTENT = """
 </html>
 """
 
+
 async def homepage(request):
     """Handles standard HTTP GET requests to '/'."""
     return HTMLResponse(HTML_CONTENT)
+
 
 async def websocket_endpoint(websocket):
     """Handles stateful WebSocket connections at '/ws'."""
     # Complete the WebSocket handshake
     await websocket.accept()
-    
+
     try:
         # Loop continuously to receive and echo messages
         while True:
@@ -33,11 +35,12 @@ async def websocket_endpoint(websocket):
             message = await websocket.receive_text()
             # Echo the exact message back to the sender
             await websocket.send_text(message)
-            
+
     except WebSocketDisconnect:
         print("WebSocket client disconnected gracefully.")
     except Exception as e:
         print(f"An error occurred: {e}")
+
 
 # Define Starlette application with both HTTP and WebSocket routing
 app = Starlette(routes=[
