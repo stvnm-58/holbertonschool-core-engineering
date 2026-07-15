@@ -12,7 +12,10 @@ HTML_CONTENT = """
     </head>
     <body>
         <h1>Starlette WebSocket App</h1>
-        <p>Use a WebSocket client to connect to <code>ws://localhost:8000/ws</code></p>
+        <p>
+            Use a WebSocket client to connect to
+            <code>ws://localhost:8000/ws</code>
+        </p>
     </body>
 </html>
 """
