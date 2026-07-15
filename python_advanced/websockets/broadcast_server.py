@@ -18,12 +18,13 @@ async def connection_handler(websocket):
             # Format the broadcast payload
             broadcast_message = f"B:{message}"
 
-            # Broadcast: Iterate over all connected clients and send the message
-            # We use asyncio.gather to send messages concurrently
+            # Broadcast to all connected clients concurrently
             if connected_clients:
-                await asyncio.gather(
-                    *[client.send(broadcast_message) for client in connected_clients]
-                )
+                tasks = [
+                    client.send(broadcast_message)
+                    for client in connected_clients
+                ]
+                await asyncio.gather(*tasks)
 
     except ConnectionClosed:
         print("Client disconnected gracefully")
