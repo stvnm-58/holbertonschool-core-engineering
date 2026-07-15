@@ -1,8 +1,9 @@
+#!/usr/bin/env python3
 import asyncio
 import websockets
 from websockets.exceptions import ConnectionClosed
 
-async def handle_client(websocket):
+async def connection_handler(websocket):
     print("Client connected")
     try:
         # Keep the connection open and continuously receive messages
@@ -13,7 +14,6 @@ async def handle_client(websocket):
             else:
                 # Send OK: followed by the original, unaltered message
                 await websocket.send(f"OK:{message}")
-                
     except ConnectionClosed:
         print("Client disconnected gracefully")
     except Exception as e:
@@ -21,7 +21,7 @@ async def handle_client(websocket):
 
 async def main():
     # Start the WebSocket server on localhost, port 8765
-    async with websockets.serve(handle_client, "localhost", 8765):
+    async with websockets.serve(connection_handler, "localhost", 8765):
         print("WebSocket Server running on ws://localhost:8765")
         await asyncio.Future()  # Keep the server running indefinitely
 
