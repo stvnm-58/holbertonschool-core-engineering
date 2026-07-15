@@ -4,6 +4,7 @@ import websockets
 from websockets.exceptions import ConnectionClosed
 
 async def connection_handler(websocket):
+
     print("Client connected")
     try:
         # Keep the connection open and continuously receive messages
@@ -20,6 +21,7 @@ async def connection_handler(websocket):
         print(f"An error occurred: {e}")
 
 async def main():
+
     # Start the WebSocket server on localhost, port 8765
     async with websockets.serve(connection_handler, "localhost", 8765):
         print("WebSocket Server running on ws://localhost:8765")
